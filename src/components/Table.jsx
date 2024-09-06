@@ -98,15 +98,15 @@ export function DataTableDemo() {
           className="max-w-sm text-white placeholder-white" // Add white text and placeholder color
         />
       </div>
-      <div className="rounded-md border border-gray-100 bg-opacity-0"> {/* Glassmorphism effect */}
-        <Table className="text-white">
-          <TableHeader>
+      <div className="rounded-md border border-gray-600 bg-opacity-0"> 
+        <Table className="text-white ">
+          <TableHeader border-b border-gray-600>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
-                    className="p-2 text-white text-center bg-gray-800"
+                    className="p-2 text-white text-center bg-gray-900"
                   >
                     {header.isPlaceholder ? null : header.column.columnDef.header}
                   </TableHead>
@@ -117,9 +117,9 @@ export function DataTableDemo() {
           <TableBody>
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id} className="hover:bg-gray-700"> {/* Optional: Highlight row on hover */}
+                <TableRow key={row.id} className="hover:bg-gray-900">
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="text-white p-2 font-bold border-b border-gray-500 bg-gray-400 bg-opacity-10">
+                    <TableCell key={cell.id} className="text-white p-2 font-bold  bg-gray-600 bg-opacity-20 border-b border-gray-700">
                       {cell.getValue()}
                     </TableCell>
                   ))}
@@ -139,7 +139,7 @@ export function DataTableDemo() {
         <Button
           variant="outline"
           size="sm"
-          className="bg-gray-600 text-white border-gray-500" // Customize button color
+          className="bg-gray-600 text-white border-gray-500" 
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
@@ -148,7 +148,7 @@ export function DataTableDemo() {
         <Button
           variant="outline"
           size="sm"
-          className="bg-gray-600 text-white border-gray-500" // Customize button color
+          className="bg-gray-600 text-white border-gray-500" 
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
